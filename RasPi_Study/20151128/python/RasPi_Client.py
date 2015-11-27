@@ -44,18 +44,15 @@ if __name__ == "__main__":
                 sw1 = 1
                 print "Push ON !!"
                 print "注文が送信されました。"
-                #ローカルパターン
-                # commands.getstatusoutput('curl -X POST -d "" http://192.168.110.3:8080/api/v1/device')
-                #最悪パターン↓
-                #commands.getstatusoutput('curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST http://api.temonalab.com/api/v1/orders.json')
-                data['SW1'] = sw1
-                data['time'] = now.strftime("%H:%M:%S")
-                data['cnt'] = cnt
-                print json.dumps(data)
-                cnt = cnt+1
-                r = requests.get(url,data=json.dumps(data))
-                #time.sleep(5)
-                #print r.text
-		print "Pleas Push!"
-            #time.sleep(1)
+            else :
+                sw1 = 0
+            data['SW1'] = sw1
+            data['time'] = now.strftime("%H:%M:%S")
+            data['cnt'] = cnt
+            print json.dumps(data)
+            cnt = cnt+1
+            r = requests.get(url,data=json.dumps(data))
+            time.sleep(0.5)
+            #print r.text
+            print "Pleas Push!"
     #exit()
