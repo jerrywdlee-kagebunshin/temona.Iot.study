@@ -135,7 +135,7 @@ Raspberry Piに以下の物を接続します。
 
     コマンドプロントを開き、
     
-    > sceen /dev/tty.xxx      115200
+    > screen /dev/tty.xxx      115200
 
 - Linux
 
