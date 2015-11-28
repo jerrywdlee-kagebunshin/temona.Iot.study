@@ -13,7 +13,7 @@ print "Exit ->  Ctrl+C"
 print
 
 while 1:
-    print GPIO.input(INPUT_IO)
+    print GPIO.input(INPUT_IO) 
     if GPIO.input(INPUT_IO) !=1 :
         print "Push ON !!"
        
