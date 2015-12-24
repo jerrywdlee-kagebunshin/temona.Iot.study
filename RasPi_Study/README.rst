@@ -5,9 +5,23 @@ TEMONA Raspberry Pi 勉強会
 TEMONA Raspberry Pi 勉強会について
 --------------------------------------------------------------------------------------------------
 
+
+
 次回開催予定
 --------------------------------------------------------------------------------------------------
 
 
 過去の勉強会
 --------------------------------------------------------------------------------------------------
+
+・第1回
+
+https://github.com/TEMONA/temona.Iot.study/tree/master/RasPi_Study/201508
+
+・第2回
+
+https://github.com/TEMONA/temona.Iot.study/tree/master/RasPi_Study/201510
+
+・第3回
+
+https://github.com/TEMONA/temona.Iot.study/tree/master/RasPi_Study/201511
