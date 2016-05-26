@@ -1,0 +1,46 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script language="Javascript">
+// 画像がクリックされたら画像を入れ替える
+num = 2;// 入れ替える画像の枚数(最初の画像も含める)
+nme = "switch" // 画像のディレクトリとファイル名の数字と拡張子より前の部分
+exp = "png" //拡張子
+cnt = 0;
+function changeImage() {
+  cnt++;
+  cnt %= num;
+  document.switch.src = nme + cnt + "." + exp;
+
+  // # ajaxでサーバーにデータを送信
+  // # cnt == 1 on 送信
+  // # cnt == 0 off 送信
+  // #http://localhost:4567/btn_clicked?switch=on
+  // #http://localhost:4567/btn_clicked?switch=off
+
+}
+$(document).ready(function() {
+	$("img").click(function(){
+		if (cnt == 0){
+		 $.ajax({
+		 		url: "http://localhost:4567/switch?switch=on"
+		 }).done(function(data){ //ajaxの通信に成功した場合
+		 	alert("スイッチオン！！");
+		 	$(".example").html(data);
+		 }).fail(function(data){ //ajaxの通信に失敗した場合
+		 	alert("error!");
+		 });
+		}else{
+		 $.ajax({
+		 		url: "http://localhost:4567/switch?switch=off"
+		 }).done(function(data){ //ajaxの通信に成功した場合
+		 	alert("スイッチオフ！！");
+		 	$(".example").html(data);
+		 }).fail(function(data){ //ajaxの通信に失敗した場合
+		 	alert("error!");
+		 });
+		}
+	});
+});
+
+</SCRIPT>
+<a href="JavaScript:changeImage()">
+<img src="switch0.png" name="switch" border="0">
